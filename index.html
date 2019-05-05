@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        Body {
+
+            background: aqua;
+
+        }
+
+        #fbox {
+            width: 100%;
+            margin: 0 auto;
+
+        }
+
+        .box {
+            padding-left: 31%;
+            padding-bottom: 31%;
+            background: orange;
+            float: left;
+            border-radius: 15px;
+            margin: 1%;
+        }
+
+        .button_startAndStop {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 20px;
+            border: 2px solid #FEA600;
+            color: #EE9900;
+            background-color: #ffffff;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .button_startAndStop:hover {
+            color: #ffffff;
+            background-color: #FEA600;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<div id="fbox">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+
+
+<input class="button_startAndStop" onclick="AutoFlish()" type="button" value="开始闪">
+<input class="button_startAndStop" onclick="ReSet()" type="button" value="结束闪">
+<script src="task1.js"></script>
+</body>
+
+</html>
