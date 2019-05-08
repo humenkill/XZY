@@ -1,8 +1,7 @@
 var boxs = document.getElementsByClassName("box");
-
+var m = [];
 function getRandomInt() {
-
-    return Math.floor((Math.random() * 9));
+    return Math.floor((Math.random()*9)+1)
 }
 
 function getRandomColor() {
@@ -12,9 +11,13 @@ function getRandomColor() {
 
 function starflash() {
 
-    for (let i = 0; i < 3; i++) {
+        for (let i = 0;i<=3;i++)
+    {
         boxs[getRandomInt()].style.backgroundColor = getRandomColor();
     }
+
+
+
 
 }
 var interval;
