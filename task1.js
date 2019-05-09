@@ -1,37 +1,51 @@
-var boxs = document.getElementsByClassName("box");
-var m = [];
-function getRandomInt() {
-    return Math.floor((Math.random()*9)+1)
+let boxs = document.getElementsByClassName("box");
+
+
+
+//随机颜色
+function randomcolor() {
+
+    return "rgb(" + Math.round(Math.random() * 255) + "," + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 10) + ')';
 }
 
-function getRandomColor() {
-    return 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
-}
 
-
-function starflash() {
-
-        for (let i = 0;i<=3;i++)
+function StartFlash() {
+    let newboxs = [0,1,2,3,4,5,6,7,8];
+    let m = newboxs.length,
+        temp,
+        a;
+    while(m)
     {
-        boxs[getRandomInt()].style.backgroundColor = getRandomColor();
+        a = Math.floor(Math.random()*m--);
+        temp = newboxs[m];
+        newboxs[m] = newboxs[a];
+        newboxs[a] = temp;
     }
-
-
-
-
-}
-var interval;
-function AutoFlish() {
-    clearInterval(interval);
-     interval = setInterval(starflash, 2000);
-}
-
-function ReSet() {
-    clearInterval(interval);
-    for (let i = 0; i <= boxs.length; i++) {
+    for (let i = 0;i<9;i++)
+    {
         boxs[i].style.backgroundColor = "orange";
     }
+    for (let i=0;i<3;i++)
+    {
+        boxs[newboxs[i]].style.backgroundColor = randomcolor();
+    }
 
 }
 
+let z;
+let start = function()
+{
+    clearInterval(z);
 
+    z = setInterval(StartFlash,1000);
+
+};
+
+
+function ReSet() {
+    clearInterval(z);
+    for (let i = 0;i<9;i++)
+    {
+        boxs[i].style.backgroundColor = "orange";
+    }
+}
